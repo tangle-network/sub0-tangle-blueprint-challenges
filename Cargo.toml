@@ -30,7 +30,7 @@ default-features = false
 features = ["getrandom"]
 
 [build-dependencies]
-blueprint-metadata = "0.1.5"
+blueprint-metadata = "0.1.6"
 
 [lib]
 path = "src/lib.rs"

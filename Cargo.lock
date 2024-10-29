@@ -1664,9 +1664,9 @@ dependencies = [
 
 [[package]]
 name = "blueprint-metadata"
-version = "0.1.5"
+version = "0.1.6"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "d1e0a945a0830663b038415a202c7afda8119feb762c1b0e95ffe75f2c316aca"
+checksum = "4f8754ff7a709cf0643f82093fff582192a36afe3b075cde8e752ad9e39d35ed"
 dependencies = [
  "cargo_metadata",
  "fs2",
@@ -4095,9 +4095,9 @@ dependencies = [
 
 [[package]]
 name = "gadget-blueprint-proc-macro-core"
-version = "0.1.4"
+version = "0.1.5"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "29208d31dc75687c8665ec60a033c4542e69eded7c643ff92f96ceeb608b291c"
+checksum = "788b9e5ef537eea236c14f1a450ee92f7039b241d048f97470e8e8fb5be0319a"
 dependencies = [
  "cid",
  "ethereum-types",
@@ -5426,7 +5426,7 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "4979f22fdb869068da03c9f7528f8297c6fd2606bc3a4affe42e6a823fdb8da4"
 dependencies = [
  "cfg-if",
- "windows-targets 0.48.5",
+ "windows-targets 0.52.6",
 ]
 
 [[package]]
