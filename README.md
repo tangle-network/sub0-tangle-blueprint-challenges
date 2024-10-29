@@ -13,46 +13,48 @@ For more details, please refer to the [project documentation](https://docs.tangl
 ### Event Listener Challenges
 Tangle's Gadget SDK is an event-driven framework that allows developers to build custom event listeners that can listen to pretty much anything! When your custom event listeners trigger, your **`#[job(...)]`** will execute. This is a powerful feature that allows you to build custom services that can listen to any event on the Tangle network, any EVM, parachain, or external API.
 
-1. **`[Event Challenge 1]`** Create a custom event listener that listens to an arbitrary Substrate/Parachain RPC and triggers a job when a new block is minted. The job should log the block number and the block hash to the console.
-2. **`[Event Challenge 2]`** Create a custom event listener that checks a weather API (e.g. OpenWeatherMap) every hour for a specified location. The job should trigger and log a message to the console when rain is detected in the forecast. The listener should use proper error handling for API failures and implement a configurable location parameter.
-3. **`[Event Challenge 3]`** Create a custom event listener that monitors a sequence of connected EVM events and triggers a job only when the full sequence is detected. For example:
+1. **`[Event Challenge 1] (200 TNT)`** Create a custom event listener that listens to an arbitrary Substrate/Parachain RPC and triggers a job when a new block is minted. The job should log the block number and the block hash to the console.
+2. **`[Event Challenge 2] (200 TNT)`** Create a custom event listener that checks a weather API (e.g. OpenWeatherMap) every hour for a specified location. The job should trigger and log a message to the console when rain is detected in the forecast. The listener should use proper error handling for API failures and implement a configurable location parameter.
+3. **`[Event Challenge 3] (1000 TNT)`** Create a custom event listener that monitors a sequence of connected EVM events and triggers a job only when the full sequence is detected. For example:
    - Create a smart contract that emits a sequence of events (e.g. `Event1`, `Event2`, `Event3`) over a sequence of transactions (e.g. `Tx1`, `Tx2`, `Tx3`)
    - The events should be linked to one another, i.e. `Event2` contains an identifier for data in `Event1`, and `Event3` contains an identifier for data in `Event2`, and so on.
    - Implement an event listener that listens for the full sequence of events and triggers a job when the sequence is detected.
    - The job should log the detected sequence to the console and include proper error handling for event sequence detection
+4. **`[Event Challenge 4] (??? TNT)`** Create your own custom event listener!
+
 
 ### Blueprint Challenges
 Many of the these blueprint challenges might leverage useful tools from our SDK like
 - [Docker containers and executions](https://github.com/tangle-network/gadget/blob/main/sdk/src/docker.rs)
   - An example of a Blueprint using this is our [Obol DVT Blueprint](https://github.com/tangle-network/obol-dvt-blueprint)
 
-1. **`[Blueprint Challenge 1] (200 TNT)`** Build a Tangle blueprint that hosts an IPFS node and pins content. The blueprint should:
+1. **`[Blueprint Challenge 1] (1000 TNT)`** Build a Tangle blueprint that hosts an IPFS node and pins content. The blueprint should:
    - Initialize and run an IPFS node using the IPFS HTTP API
    - Implement a job that accepts content (files/data) and pins it to IPFS
    - Return and log the IPFS hash (CID) of the pinned content
    - Include proper error handling for node initialization and pinning operations
    - Allow configuration of IPFS node parameters (e.g., storage location, gateway ports)
    - Implement basic node health monitoring and logging
-2. **`[Blueprint Challenge 2] (100 TNT)`** Build a simple price oracle data feed blueprint. The blueprint should:
+2. **`[Blueprint Challenge 2] (500 TNT)`** Build a simple price oracle data feed blueprint. The blueprint should:
    - Accept user requests for price data for specific cryptocurrency pairs
    - Fetch current price data from a price API (e.g. CoinGecko)
    - Post the fetched price data to the Tangle blockchain
    - Include basic error handling for API failures
-3. **`[Blueprint Challenge 3] (200 TNT)`** Build a blueprint that runs an SSV Network operator. The blueprint should:
+3. **`[Blueprint Challenge 3] (1000 TNT)`** Build a blueprint that runs an SSV Network operator. The blueprint should:
    - Set up and configure an SSV Network operator node
    - Register the operator on the SSV Network
    - Monitor validator performance and network health
    - Implement proper error handling and logging
    - Include configuration options for network parameters and performance tuning
-4. **`[Blueprint Challenge 4] (20 TNT)`** Build a blueprint that runs a simple web server. The blueprint should:
+4. **`[Blueprint Challenge 4] (50 TNT)`** Build a blueprint that runs a simple web server. The blueprint should:
    - Initialize and run a simple web server using a Rust web framework (e.g. Actix)
    - Serve a basic HTML page with a message and a link to the Tangle Explorer
    - Include basic error handling for server initialization and request handling
    - Implement logging and monitoring for server health
-5. **`[Blueprint Challenge 5] (200 TNT)`** Build a blueprint that extends our [Gaia AI Agent Blueprint](https://github.com/tangle-network/gaia-ai-agent-template) to do something new. The blueprint could:
+5. **`[Blueprint Challenge 5] (1000 TNT)`** Build a blueprint that extends our [Gaia AI Agent Blueprint](https://github.com/tangle-network/gaia-ai-agent-template) to do something new. The blueprint could:
    - Implement a new job that performs a custom AI task (e.g. image recognition, text analysis)
    - Extends our API server with API keys and authentication
-6. **`[Blueprint Challenge 6] (500 TNT)`** Build a blueprint that deploys programs into a TEE secure enclave. The blueprint should:
+6. **`[Blueprint Challenge 6] (1000 TNT)`** Build a blueprint that deploys programs into a TEE secure enclave. The blueprint should:
    - Set up and configure a TEE environment (e.g. Intel SGX, AMD SEV)
    - Implement secure program deployment and attestation
    - Verify program integrity and authenticity before deployment
@@ -76,7 +78,8 @@ Many of the these blueprint challenges might leverage useful tools from our SDK 
    - Allow configuration of:
      - Fee parameters
      - Frontend customization
-   
+8. **`[Blueprint Challenge 8] (??? TNT)`** Build a new Blueprint with your own ideas!
+
 ## 📚 Prerequisites
 
 Before you can run this project, you will need to have the following software installed on your machine:
