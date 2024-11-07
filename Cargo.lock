@@ -1664,9 +1664,9 @@ dependencies = [
 
 [[package]]
 name = "blueprint-metadata"
-version = "0.1.5"
+version = "0.1.6"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "d1e0a945a0830663b038415a202c7afda8119feb762c1b0e95ffe75f2c316aca"
+checksum = "4f8754ff7a709cf0643f82093fff582192a36afe3b075cde8e752ad9e39d35ed"
 dependencies = [
  "cargo_metadata",
  "fs2",
