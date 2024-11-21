@@ -297,7 +297,7 @@ dependencies = [
  "async-stream",
  "async-trait",
  "auto_impl",
- "dashmap",
+ "dashmap 5.5.3",
  "futures",
  "futures-utils-wasm",
  "lru",
@@ -1719,7 +1719,7 @@ checksum = "4f8754ff7a709cf0643f82093fff582192a36afe3b075cde8e752ad9e39d35ed"
 dependencies = [
  "cargo_metadata",
  "fs2",
- "gadget-blueprint-proc-macro-core",
+ "gadget-blueprint-proc-macro-core 0.1.5",
  "rustdoc-types",
  "serde",
  "serde_json",
@@ -2544,6 +2544,20 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "978747c1d849a7d2ee5e8adc0159961c48fb7e5db2f06af6723b80123bb53856"
 dependencies = [
  "cfg-if",
+ "hashbrown 0.14.5",
+ "lock_api",
+ "once_cell",
+ "parking_lot_core",
+]
+
+[[package]]
+name = "dashmap"
+version = "6.1.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "5041cc499144891f3790297212f32a74fb938e5136a14943f338ef9e0ae276cf"
+dependencies = [
+ "cfg-if",
+ "crossbeam-utils",
  "hashbrown 0.14.5",
  "lock_api",
  "once_cell",
@@ -4176,11 +4190,11 @@ dependencies = [
 
 [[package]]
 name = "gadget-blueprint-proc-macro"
-version = "0.3.0"
+version = "0.4.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "ca275170fab969cca0a2635d32bfd88e7657918e8cfe5c9527ff2966c6387268"
+checksum = "6f6acfb3136e908bfa36a0e68d5556298aec5dd743a4fd6f2190fccf7125c5dd"
 dependencies = [
- "gadget-blueprint-proc-macro-core",
+ "gadget-blueprint-proc-macro-core 0.2.0",
  "indexmap 2.6.0",
  "itertools 0.13.0",
  "proc-macro2",
@@ -4201,10 +4215,32 @@ dependencies = [
 ]
 
 [[package]]
-name = "gadget-context-derive"
+name = "gadget-blueprint-proc-macro-core"
 version = "0.2.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "c2f15fa82798ae66fec9bea17791a5f37f200ed9803158b08180fd6ba85737c1"
+checksum = "926d5a5d8c7706be67b50fee8e57d9e9a9c8e4b5430e6ed464c9943128b006bc"
+dependencies = [
+ "cid",
+ "ethereum-types",
+ "serde",
+]
+
+[[package]]
+name = "gadget-blueprint-serde"
+version = "0.2.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "0c70fbc91721439daf6b33678e83ebed8b2f48fe73a4ab20a050f91040de7764"
+dependencies = [
+ "paste",
+ "serde",
+ "tangle-subxt",
+]
+
+[[package]]
+name = "gadget-context-derive"
+version = "0.2.2"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "41828995faf594c8d7c2e1d825b542aa3500cbd6ad529055bd11c60603db0566"
 dependencies = [
  "proc-macro2",
  "quote",
@@ -4236,11 +4272,12 @@ dependencies = [
 
 [[package]]
 name = "gadget-sdk"
-version = "0.3.0"
+version = "0.5.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "1f8c097510e2e3af9d6a248bebc3416bb3efdcb67748afa57a68b8c1bc1662e4"
+checksum = "31f104e44f6946ae10ae4c0b87c4a81d0d5c6cc2e59b50fecc5231a1f0c4ea3a"
 dependencies = [
  "alloy-contract",
+ "alloy-json-abi",
  "alloy-network",
  "alloy-primitives 0.7.7",
  "alloy-provider",
@@ -4260,13 +4297,16 @@ dependencies = [
  "bincode",
  "bollard",
  "clap 4.5.20",
+ "color-eyre",
+ "dashmap 6.1.0",
  "ed25519-zebra 4.0.3",
  "eigensdk",
  "elliptic-curve",
  "failure",
  "futures",
  "gadget-blueprint-proc-macro",
- "gadget-blueprint-proc-macro-core",
+ "gadget-blueprint-proc-macro-core 0.2.0",
+ "gadget-blueprint-serde",
  "gadget-context-derive",
  "gadget-io",
  "getrandom",
@@ -4280,7 +4320,9 @@ dependencies = [
  "libp2p",
  "lock_api",
  "log",
+ "lru-mem",
  "nix 0.29.0",
+ "num-bigint 0.4.6",
  "parking_lot",
  "prometheus",
  "rand",
@@ -6178,6 +6220,15 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "31e24f1ad8321ca0e8a1e0ac13f23cb668e6f5466c2c57319f6a5cf1cc8e3b1c"
 dependencies = [
  "linked-hash-map",
+]
+
+[[package]]
+name = "lru-mem"
+version = "0.3.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "cf5c8c26d903a41c80d4cc171940a57a4d1bc51139ebd6aad87e2f9ae3774780"
+dependencies = [
+ "hashbrown 0.14.5",
 ]
 
 [[package]]
